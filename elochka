@@ -1,0 +1,63 @@
+live_loop :foo do
+  r = 0.5
+  use_synth :blade
+  
+  2.times do
+    play :G, sustain: 2, release: 1
+    sleep 1
+    
+    play :E
+    sleep r
+    
+    play :E
+    sleep r
+  end
+  
+  play :G
+  sleep r
+  
+  play :F
+  sleep r
+  
+  play :E
+  sleep r
+  
+  play :D
+  sleep r
+  
+  play :C, sustain: 4, release: 2
+  sleep 2
+  
+  
+  play :A, sustain: 2, release: 1
+  sleep 1
+  
+  play :C5
+  sleep r
+  
+  play :A
+  sleep r
+  
+  play :G, sustain: 2, release: 1
+  sleep 1
+  
+  play :E
+  sleep r
+  play :E
+  sleep r
+  
+  play :G
+  sleep r
+  
+  play :F
+  sleep r
+  
+  play :E
+  sleep r
+  
+  play :D
+  sleep r
+  
+  play :C, sustain: 4, release: 2
+  sleep 2
+end
