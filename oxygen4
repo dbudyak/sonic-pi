@@ -1,0 +1,11 @@
+use_synth :piano
+play :C5, decay: 1
+sleep 1.05
+play :G
+sleep 0.15
+play :Eb
+sleep 0.6
+play :G
+sleep 0.6
+play :C
+sleep 0.15
