@@ -1,0 +1,62 @@
+p = 0.5
+live_loop :foo do
+  
+  use_synth :piano
+  
+  sleep p
+  
+  play :Db4, attack: 0.4
+  sleep p
+  
+  play :E, amp: 0.9, attack: 0.2
+  sleep p
+  
+  play :A, amp: 0.8, release: 3
+  sleep p
+  
+  play :F, amp: 0.9
+  sleep p
+  
+  play :E, amp: 1, release: 0.3
+  sleep p
+  
+  use_synth :dsaw
+  
+  play :Fb, pan: -1, attack: 0.3, attack_level: 0.1, decay: 0.2, decay_level: 1, sustain: 0.5, sustain_level: 0.8, release: 1
+  sleep p
+  
+  play :F, pan: 1, attack: 0.3, attack_level: 0.1, decay: 0.2, decay_level: 1, sustain: 0.5, sustain_level: 0.8, release: 1
+  sleep p
+  
+  use_synth :supersaw
+  
+  play :A, release: 1, amp: 0.4
+  sleep p
+  
+  use_synth :tech_saws
+  
+  play :Bb5, amp: 0.5, release: 1.3, sustain: 0.4
+  sleep 2
+end
+
+live_loop :bar do
+  
+  use_synth :zawa
+  play :G, release: 4, amp: 0.1, attack: 0.5
+  sleep 6
+  
+end
+
+live_loop :baz do
+  use_synth :gnoise
+  
+  play :C, attack: 0.3, release: 0.2, amp: 0.3
+  sleep 1.5
+  play :C, amp: 0.2, release: 0.7
+  sleep 0.3
+  play :C, amp: 0.3, release: 0.7
+  sleep 0.2
+  play :Cs, amp: 0.4, release: 2
+  sample :bass_thick_c
+  sleep 4
+end
