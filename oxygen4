@@ -1,36 +1,42 @@
-use_synth :dsaw
-live_loop :main do
-  2.times do
+k = 0.3
+
+use_synth :blade
+with_fx :gverb do
+  ## originally 26 sec
+  live_loop :main do
     2.times do
-      play :C5
-      sleep 1
+      2.times do
+        play :C5
+        sleep 3*k
+        play :G
+        sleep k
+        play :Eb
+        sleep k
+        play :G
+        sleep 2*k
+        play :C, decay: 0.3, release: 0.9
+        sleep 7*k
+      end
+      play :Bb
+      sleep 3*k
+      play :A
+      sleep k
       play :G
-      sleep 0.3
-      play :Eb
-      sleep 0.3
-      play :G
-      sleep 0.6
-      play :C, decay: 0.3, release: 0.8
-      sleep 2.4
+      sleep k
+      play :A
+      sleep 2*k
+      play :D, decay: 0.3, release: 0.9
+      sleep 7*k
     end
-    
-    play :Bb
-    sleep 1
-    play :A
-    sleep 0.3
-    play :G
-    sleep 0.3
-    play :A
-    sleep 0.6
-    play :D, decay: 0.3, release: 0.8
-    sleep 2.4
+    2.times do
+      play :A, release: 0.6
+      sleep 1.2*k
+      play :G
+      sleep k
+      play :F
+      sleep 1.4*k
+      play :C
+      sleep 4*k
+    end
   end
-  play :A
-  sleep 0.5
-  play :G
-  sleep 0.3
-  play :F
-  sleep 0.4
-  play :C
-  sleep 1.5
 end
